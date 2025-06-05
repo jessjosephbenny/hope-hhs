@@ -1,103 +1,197 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Heart, Shield, Users, MapPin, Phone, Check } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const features = [
+    {
+      icon: <Shield className="h-8 w-8 text-[theme(hope-green-600)]" />,
+      title: "Licensed & Certified",
+      description:
+        "Licensed by Illinois Department of Public Health and Medicare-certified by the U.S. Department of Health & Human Services",
+    },
+    {
+      icon: <Heart className="h-8 w-8 text-[theme(hope-indigo-600)]" />,
+      title: "Compassionate Care",
+      description:
+        "We deliver care with kindness and respect, inspiring hope and comfort in every home we serve.",
+    },
+    {
+      icon: <Users className="h-8 w-8 text-[theme(hope-green-600)]" />,
+      title: "Experienced Team",
+      description:
+        "Our skilled, licensed professionals are dedicated to exceptional care that restores hope and promotes independence.",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const services = [
+    "Skilled Nursing Care",
+    "Physical Therapy",
+    "Occupational Therapy",
+    "Speech Therapy",
+    "Home Health Aides",
+    "Medical Social Work",
+    "Medical Equipment Support",
+  ];
+  return (
+    <>
+      <section className="relative bg-gradient-to-br from-[theme(hope-green-50)] via-white to-hope-indigo-50 py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Restoring Health <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-indigo-600">
+                  Reviving Hope
+                </span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Professional care, delivered with warmth and respect. We help
+                patients heal, regain independence, and find hope—without
+                leaving home.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[theme(hope-green-600)] hover:bg-[theme(hope-green-700)] text-white px-8"
+                >
+                  <Link href="/services">Our Services</Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-hope-indigo-600 text-hope-indigo-600 hover:bg-hope-indigo-50 px-8"
+                >
+                  <Link href="/contact">Contact Us</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="relative z-10 bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <img
+                  src="/hero-image-2.png"
+                  alt="Caring hands providing support"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[theme(hope-green-900)]/20 to-transparent"></div>
+              </div>
+              <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-[theme(hope-green-200)] to-hope-indigo-200 rounded-full blur-3xl opacity-30"></div>
+              <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-br from-hope-indigo-200 to-[theme(hope-green-200)] rounded-full blur-3xl opacity-30"></div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Hope Home Health?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We understand the value of healing at home—with care that puts you
+              first.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <CardContent className="p-8 text-center">
+                  <div className="mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-hope-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Comprehensive Healthcare Services
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                From skilled nursing to rehabilitation therapy, we provide a
+                full range of medical services designed to help you recover,
+                maintain independence, and improve your quality of life.
+              </p>
+              <div className="grid grid-cols-1 gap-3 mb-8">
+                {services.map((service, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <Check className="h-5 w-5 text-[theme(hope-green-600)] flex-shrink-0" />
+                    <span className="text-gray-700">{service}</span>
+                  </div>
+                ))}
+              </div>
+              <Button
+                asChild
+                className="bg-hope-indigo-600 hover:bg-hope-indigo-700 text-white"
+              >
+                <Link href="/services">View All Services</Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <img
+                src="/home-services.png"
+                alt="Medical equipment and caring environment"
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Contact us today to learn how we can help you or your loved one
+            receive quality healthcare at home.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-5 w-5 text-[theme(hope-green-600)]" />
+              <span className="text-lg font-semibold">(630) 260-2550</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-5 w-5 text-hope-indigo-600" />
+              <span className="text-gray-600">
+                121 S Wilke Rd #410, Arlington Heights, IL
+              </span>
+            </div>
+          </div>
+          <div className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[theme(hope-green-600)] hover:bg-[theme(hope-green-700)] px-8 text-white"
+            >
+              <Link href="/contact">Schedule a Consultation</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
