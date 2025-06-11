@@ -1,47 +1,20 @@
-"use client";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Clock, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Printer } from "lucide-react";
+import { ContactForm } from "@/components/client-components/ContactForm";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-hope-green-50 to-hope-indigo-50 py-20">
+      <section className="bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Contact Hope Home Health
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Ready to learn more about our services? We are here to answer your
-              questions and help you get started with compassionate home
-              healthcare.
+              Choose trust, choose quality, choose Hope Home Health Services
+              Inc.
             </p>
           </div>
         </div>
@@ -56,67 +29,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Send Us a Message
               </h2>
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="mt-1"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="mt-1"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="mt-1"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={4}
-                        className="mt-1"
-                        placeholder="Please tell us about your healthcare needs or any questions you have..."
-                      />
-                    </div>
-                    <Button
-                      type="submit"
-                      className="w-full bg-hope-green-600 hover:bg-hope-green-700"
-                    >
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <ContactForm />
             </div>
 
             {/* Contact Details */}
@@ -128,8 +41,8 @@ const Contact = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-hope-green-100 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-hope-green-600" />
+                      <div className="bg-[theme(hope-green-100)] p-3 rounded-full">
+                        <MapPin className="h-6 w-6 text-[theme(hope-green-600)]" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-2">
@@ -148,18 +61,18 @@ const Contact = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-hope-indigo-100 p-3 rounded-full">
-                        <Phone className="h-6 w-6 text-hope-indigo-600" />
+                      <div className="bg-[theme(hope-indigo-100)] p-3 rounded-full">
+                        <Phone className="h-6 w-6 text-[theme(hope-indigo-600)]" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-2">
                           Phone
                         </h3>
                         <p className="text-gray-600 text-lg font-medium">
-                          (847) 555-HOPE
+                          (630) 260-2550
                         </p>
                         <p className="text-gray-500 text-sm">
-                          24/7 Emergency Line Available
+                          24/7 Nurses on call
                         </p>
                       </div>
                     </div>
@@ -169,37 +82,36 @@ const Contact = () => {
                 <Card className="border-0 shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-hope-green-100 p-3 rounded-full">
-                        <Mail className="h-6 w-6 text-hope-green-600" />
+                      <div className="bg-[theme(hope-green-100)] p-3 rounded-full">
+                        <Printer className="h-6 w-6 text-[theme(hope-green-600)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">
+                          FAX
+                        </h3>
+                        <p className="text-gray-600 text-lg font-medium">
+                          (630) 260-2551
+                        </p>
+                        <p className="text-gray-500 text-sm"></p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-[theme(hope-indigo-100)] p-3 rounded-full">
+                        <Mail className="h-6 w-6 text-[theme(hope-indigo-600)]" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-2">
                           Email
                         </h3>
-                        <p className="text-gray-600">info@hopehomehealth.com</p>
+                        <p className="text-gray-600">contact@hope-hhs.com</p>
                         <p className="text-gray-500 text-sm">
-                          We respond within 24 hours
+                          We act fast — because your care cannot wait.
                         </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-0 shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-hope-indigo-100 p-3 rounded-full">
-                        <Clock className="h-6 w-6 text-hope-indigo-600" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Office Hours
-                        </h3>
-                        <div className="text-gray-600 space-y-1">
-                          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                          <p>Saturday: 9:00 AM - 3:00 PM</p>
-                          <p>Sunday: On-call emergency services</p>
-                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -211,7 +123,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-hope-indigo-50">
+      <section className="py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">

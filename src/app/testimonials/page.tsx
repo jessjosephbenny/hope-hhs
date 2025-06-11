@@ -4,46 +4,39 @@ import { Quote, Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Margaret S.",
+      name: "Don Sniezek",
       location: "Arlington Heights",
       service: "Skilled Nursing",
       rating: 5,
-      text: "The nurses from Hope Home Health were absolutely wonderful. They made my recovery after surgery so much easier and always explained everything clearly. I felt safe and well-cared for in my own home.",
+      text: "The nurse from hope was kind, professional, and knowledgeable during all our sessions. It was a pleasure having our weekly meetings.",
     },
     {
-      name: "Robert T.",
+      name: "Shauna Eileen",
       location: "Mount Prospect",
       service: "Physical Therapy",
       rating: 5,
-      text: "After my knee replacement, the physical therapist helped me regain my strength and mobility. The convenience of having therapy at home made such a difference in my recovery process.",
+      text: "The caregiver was always great and helpful with my mom! Great bedside manner",
     },
     {
-      name: "Linda M.",
+      name: "Nancy Andretich",
       location: "Schaumburg",
-      service: "Home Health Aide",
+      service: "Skilled Nursing, Physical Therapy",
       rating: 5,
-      text: "The aide who comes to help my mother is like family to us now. She's so patient and kind, and we have complete peace of mind knowing Mom is in such good hands.",
+      text: "Hope Home Health is an excellent service. Great nurses and PT services — highly recommend!",
     },
     {
-      name: "James K.",
+      name: "Eric Steinert",
       location: "Arlington Heights",
       service: "Speech Therapy",
       rating: 5,
-      text: "Following my stroke, the speech therapist was incredibly patient and encouraging. I've made remarkable progress in my communication abilities thanks to their expertise.",
-    },
-    {
-      name: "Patricia W.",
-      location: "Des Plaines",
-      service: "Occupational Therapy",
-      rating: 5,
-      text: "The occupational therapist helped me adapt my home and learn new ways to do daily tasks. I'm now living independently again, which means everything to me.",
+      text: "Hope was great with my mom for in home nursing service",
     },
   ];
 
   const stats = [
     { number: "500+", label: "Families Served" },
-    { number: "98%", label: "Patient Satisfaction" },
-    { number: "15+", label: "Years Experience" },
+    { number: "100%", label: "Patient Satisfaction" },
+    { number: "20+", label: "Years Experience" },
     { number: "24/7", label: "Support Available" },
   ];
 
@@ -57,9 +50,9 @@ const Testimonials = () => {
               What Our Families Say
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Don't just take our word for it. Hear from the families we've had
-              the privilege to serve and learn about their experiences with Hope
-              Home Health Services.
+              Don&apos;t just take our word for it. Hear from the families
+              we&apos;ve had the privilege to serve and learn about their
+              experiences with Hope Home Health Services.
             </p>
           </div>
         </div>
@@ -103,14 +96,11 @@ const Testimonials = () => {
                     </div>
                   </div>
                   <blockquote className="text-gray-700 mb-6 leading-relaxed italic">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </blockquote>
                   <div className="border-t pt-4">
                     <div className="font-semibold text-gray-900">
                       {testimonial.name}
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      {testimonial.location}
                     </div>
                     <div className="text-sm text-hope-indigo-600 font-medium mt-1">
                       {testimonial.service}

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
-import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +15,7 @@ const Header = () => {
     { label: "About", path: "/about" },
     { label: "Testimonials", path: "/testimonials" },
     { label: "Contact", path: "/contact" },
+    { label: "Career", path: "/career" },
   ];
 
   const serviceItems = [
@@ -35,14 +35,14 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-28">
+        <div className="flex justify-between items-center h-40">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image
+            <img
               src="/HOPE_Logo_Color.png"
               alt="logo"
-              width={120}
-              height={50}
+              width={180}
+              height={60}
             />
           </Link>
 
@@ -52,7 +52,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors hover:text-[theme(hope-green.600)] ${
+                className={`text-base font-medium transition-colors hover:text-[theme(hope-green.600)] ${
                   isActive(item.path)
                     ? "text-[theme(hope-green.600)]"
                     : "text-gray-700"
@@ -65,7 +65,7 @@ const Header = () => {
             {/* Services Dropdown */}
             <div className="relative group">
               <button
-                className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-[theme(hope-green.600)] ${
+                className={`flex items-center space-x-1 text-base font-medium transition-colors hover:text-[theme(hope-green.600)] ${
                   isServicesActive()
                     ? "text-[theme(hope-green.600)]"
                     : "text-gray-700"
@@ -98,7 +98,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors hover:text-[theme(hope-green.600)] ${
+                className={`text-base font-medium transition-colors hover:text-[theme(hope-green.600)] ${
                   isActive(item.path)
                     ? "text-[theme(hope-green.600)]"
                     : "text-gray-700"
@@ -115,15 +115,15 @@ const Header = () => {
               href="tel:(847) 394-5500"
               className="flex items-center space-x-2 bg-[theme(hope-green.50)] text-[theme(hope-green.700)] px-4 py-2 rounded-lg hover:bg-[theme(hope-green.100)] transition-colors border border-[theme(hope-green.200)]"
             >
-              <Phone className="h-4 w-4" />
-              <span className="font-medium">(630) 260-2550</span>
+              <Phone className="h-8 w-8" />
+              <span className="text-xl font-medium">(630) 260-2550</span>
             </a>
-            <Button
+            {/* <Button
               asChild
               className="bg-[theme(hope-indigo.600)] text-white hover:bg-[theme(hope-indigo.700)"
             >
               <Link href="/contact">Get Started</Link>
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile menu button */}

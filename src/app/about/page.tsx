@@ -1,38 +1,45 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Shield, Award, Users } from "lucide-react";
+import { HeartHandshake, Medal, Stethoscope, Sunrise } from "lucide-react";
 
 const About = () => {
   const values = [
     {
-      icon: <Heart className="h-8 w-8 text-hope-green-600" />,
-      title: "Licensed",
+      icon: <HeartHandshake className="h-8 w-8 text-[theme(hope-green-600)]" />,
+      title: "Compassion",
       description:
-        "All our healthcare professionals are fully licensed and meet the highest industry standards.",
+        "We provide care with empathy, kindness, and respect—uplifting our patients with every visit.",
     },
     {
-      icon: <Users className="h-8 w-8 text-hope-indigo-600" />,
-      title: "Experienced",
+      icon: <Medal className="h-8 w-8 text-[theme(hope-indigo-600)]" />,
+      title: "Excellence",
       description:
-        "Our team brings years of experience in home healthcare and medical services.",
+        "We deliver consistent, high-quality care with a focus on outcomes, comfort, and dignity.",
     },
     {
-      icon: <Shield className="h-8 w-8 text-hope-green-600" />,
-      title: "Trusted",
+      icon: <Stethoscope className="h-8 w-8 text-[theme(hope-green-600)]" />,
+      title: "Expertise",
       description:
-        "Families throughout Arlington Heights trust us with their most important healthcare needs.",
+        "Our experienced RNs, RPNs, and therapists bring deep knowledge and clinical skill to every home.",
     },
     {
-      icon: <Award className="h-8 w-8 text-hope-indigo-600" />,
-      title: "Local",
+      icon: <Sunrise className="h-8 w-8 text-[theme(hope-indigo-600)]" />,
+      title: "Hope",
       description:
-        "Proudly serving the Arlington Heights community with personalized, local care.",
+        "We strive to restore health and inspire hope in every life we touch.",
     },
+  ];
+
+  const stats = [
+    { number: "7+", label: "Counties Covered" },
+    { number: "15+", label: "Years Experience" },
+    { number: "100%", label: "Patient Satisfaction" },
+    { number: "24/7", label: "Support Available" },
   ];
 
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-hope-green-50 to-hope-indigo-50 py-20">
+      <section className="bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -47,6 +54,22 @@ const About = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-[theme(hope-green-600)] mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,37 +79,38 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Hope Home Health Services is dedicated to providing exceptional,
-                personalized healthcare services in the comfort and familiarity
-                of your own home. We believe that healing happens best when
-                patients are surrounded by the people and places they love.
+                At Hope Home Health Services, our mission is to deliver
+                high-quality, personalized healthcare in the comfort and dignity
+                of each patient’s home. We believe healing is most effective
+                when surrounded by familiarity, warmth, and family.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Our team of licensed healthcare professionals works closely with
-                patients, families, and physicians to develop comprehensive care
-                plans that promote recovery, maintain independence, and improve
-                quality of life.
+                Our team is committed to promoting independence, restoring
+                well-being, and supporting every stage of recovery with clinical
+                excellence and heartfelt compassion. From skilled nursing to
+                rehabilitative therapies, every service is shaped around the
+                unique needs of those we serve.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Every member of our team shares a common commitment: to treat
-                each patient with the same dignity, respect, and compassion we
-                would want for our own family members.
+                With every visit, we strive not only to treat conditions—but to
+                uplift spirits, ease burdens, and bring hope into the everyday
+                lives of our patients.
               </p>
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80"
+                src="/about/mission.png"
                 alt="Supportive healthcare environment"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-hope-green-900/10 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[theme(hope-green-900)]/10 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-hope-indigo-50">
+      <section className="py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -119,7 +143,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -135,8 +159,8 @@ const About = () => {
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-hope-green-100 p-2 rounded-full flex-shrink-0">
-                    <Heart className="h-5 w-5 text-hope-green-600" />
+                  <div className="bg-[theme(hope-green-100)] p-2 rounded-full flex-shrink-0">
+                    <Heart className="h-5 w-5 text-[theme(hope-green-600)]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">
@@ -149,8 +173,8 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-hope-indigo-100 p-2 rounded-full flex-shrink-0">
-                    <Shield className="h-5 w-5 text-hope-indigo-600" />
+                  <div className="bg-[theme(hope-indigo-100)] p-2 rounded-full flex-shrink-0">
+                    <Shield className="h-5 w-5 text-[theme(hope-indigo-600)]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">
@@ -163,8 +187,8 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-hope-green-100 p-2 rounded-full flex-shrink-0">
-                    <Award className="h-5 w-5 text-hope-green-600" />
+                  <div className="bg-[theme(hope-green-100)] p-2 rounded-full flex-shrink-0">
+                    <Award className="h-5 w-5 text-[theme(hope-green-600)]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">
@@ -177,8 +201,8 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-hope-indigo-100 p-2 rounded-full flex-shrink-0">
-                    <Users className="h-5 w-5 text-hope-indigo-600" />
+                  <div className="bg-[theme(hope-indigo-100)] p-2 rounded-full flex-shrink-0">
+                    <Users className="h-5 w-5 text-[theme(hope-indigo-600)]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">
@@ -194,7 +218,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };

@@ -5,14 +5,17 @@ import Link from "next/link";
 
 const SkilledNursing = () => {
   const services = [
-    "Medication administration and management",
+    "IV therapy and infusion care",
+    "Cardiac care and monitoring",
+    "Diabetes management and education",
+    "Post-surgical care and recovery",
     "Wound care and dressing changes",
-    "Chronic disease management",
-    "Post-surgical care and monitoring",
-    "IV therapy and injections",
-    "Catheter care and ostomy management",
-    "Vital signs monitoring",
-    "Health education and family training",
+    "Orthopedic care and mobility support",
+    "TPN and enteral feedings",
+    "Rehabilitation support",
+    "Medication administration and management",
+    "Oxygen therapy and equipment support",
+    "Pulmonary care and symptom monitoring",
   ];
 
   const benefits = [
@@ -26,7 +29,7 @@ const SkilledNursing = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-hope-green-50 to-hope-indigo-50 py-20">
+      <section className="bg-gradient-to-br from-hope-green-50 to-[theme(hope-indigo-50)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -50,7 +53,7 @@ const SkilledNursing = () => {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-hope-indigo-600 text-hope-indigo-600 hover:bg-hope-indigo-50"
+                  className="border-[theme(hope-indigo-600)] text-[theme(hope-indigo-600)] hover:bg-[theme(hope-indigo-50)]"
                 >
                   <Link href="/services">View All Services</Link>
                 </Button>
@@ -58,7 +61,7 @@ const SkilledNursing = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80"
+                src="/services/skilled-nursing.png"
                 alt="Professional nursing care at home"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
@@ -73,7 +76,7 @@ const SkilledNursing = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                What's Included
+                What&apos;s Included
               </h2>
               <div className="space-y-4">
                 {services.map((service, index) => (
@@ -91,8 +94,8 @@ const SkilledNursing = () => {
               <div className="space-y-6">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-hope-indigo-100 p-2 rounded-full flex-shrink-0">
-                      <Heart className="h-4 w-4 text-hope-indigo-600" />
+                    <div className="bg-[theme(hope-indigo-100)] p-2 rounded-full flex-shrink-0">
+                      <Heart className="h-4 w-4 text-[theme(hope-indigo-600)]" />
                     </div>
                     <span className="text-gray-700">{benefit}</span>
                   </div>
@@ -104,7 +107,7 @@ const SkilledNursing = () => {
       </section>
 
       {/* Qualifications */}
-      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-hope-indigo-50">
+      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-[theme(hope-indigo-50)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -130,7 +133,7 @@ const SkilledNursing = () => {
             </Card>
             <Card className="border-0 shadow-lg bg-white">
               <CardContent className="p-8 text-center">
-                <Heart className="h-12 w-12 text-hope-indigo-600 mx-auto mb-4" />
+                <Heart className="h-12 w-12 text-[theme(hope-indigo-600)] mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   Compassionate Care
                 </h3>
@@ -160,16 +163,16 @@ const SkilledNursing = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <blockquote className="text-xl italic text-gray-600 mb-6">
-            "The skilled nursing care I received at home made all the difference
-            in my recovery. The nurses were professional, caring, and helped me
-            feel confident managing my health."
+            &quot;The skilled nursing care I received at home made all the
+            difference in my recovery. The nurses were professional, caring, and
+            helped me feel confident managing my health.&quot;
           </blockquote>
           <cite className="text-gray-500">— Sarah M., Arlington Heights</cite>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-hope-indigo-50">
+      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-[theme(hope-indigo-50)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Ready to Start Your Care?
@@ -181,7 +184,7 @@ const SkilledNursing = () => {
           <Button
             asChild
             size="lg"
-            className="bg-hope-indigo-600 hover:bg-hope-indigo-700"
+            className="bg-[theme(hope-indigo-600)] hover:bg-[theme(hope-indigo-700)]"
           >
             <Link href="/contact">Speak with Our Team</Link>
           </Button>

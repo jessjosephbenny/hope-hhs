@@ -1,5 +1,4 @@
 import { Phone, MapPin } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -9,14 +8,31 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Image
-                src="/HOPE_Logo_Color.png"
+            <div className="flex flex-row space-x-4 mb-4 items-center">
+              <Link href="/" className="flex items-center space-x-2 mb-4">
+                <img
+                  src="/HOPE_Logo_Color.png"
+                  alt="logo"
+                  width={100}
+                  height={50}
+                />
+              </Link>
+              <img
+                src="/idph.png"
                 alt="logo"
-                width={100}
-                height={50}
+                width={150}
+                height={41}
+                className="object-contain"
               />
-            </Link>
+              <img
+                src="/medicare.png"
+                alt="logo"
+                width={70}
+                height={50}
+                className="object-contain"
+              />
+            </div>
+
             <p className="text-gray-600 mb-4 max-w-md">
               Restoring Health. Rekindling Hope. Providing compassionate,
               professional home healthcare services in Arlington Heights and

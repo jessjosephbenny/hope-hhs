@@ -16,72 +16,67 @@ const Services = () => {
     {
       id: "skilled-nursing",
       title: "Skilled Nursing",
-      icon: <Stethoscope className="h-8 w-8 text-hope-green-600" />,
+      icon: (
+        <Stethoscope className="h-8 w-8 text-[theme([theme(hope-green-600)])]" />
+      ),
       summary:
-        "Professional nursing care including medication management, wound care, and health monitoring.",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80",
+        "Our experienced registered nurses provide expert medical care, including wound care, medication management, infusion therapy, and post-surgical care.",
+      image: "/services/skilled-nursing.png",
     },
     {
       id: "physical-therapy",
       title: "Physical Therapy",
-      icon: <Activity className="h-8 w-8 text-hope-indigo-600" />,
+      icon: <Activity className="h-8 w-8 text-[theme(hope-indigo-600)]" />,
       summary:
-        "Restore mobility, strength, and independence through personalized rehabilitation programs.",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=600&q=80",
+        "Our licensed physical therapists develop personalized exercise programs and techniques to improve mobility, strength, and balance, ensuring optimal recovery.",
+      image: "/services/physical-therapy.png",
     },
     {
       id: "occupational-therapy",
       title: "Occupational Therapy",
-      icon: <Users className="h-8 w-8 text-hope-green-600" />,
+      icon: <Users className="h-8 w-8 text-[theme([theme(hope-green-600)])]" />,
       summary:
-        "Improve daily living skills and adapt your environment for maximum independence.",
-      image:
-        "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=600&q=80",
+        "Our skilled occupational therapists help individuals regain independence in daily activities, such as dressing, bathing, and meal preparation.",
+      image: "/services/occupational-therapy.png",
     },
     {
       id: "speech-therapy",
       title: "Speech Therapy",
-      icon: <MessageCircle className="h-8 w-8 text-hope-indigo-600" />,
+      icon: <MessageCircle className="h-8 w-8 text-[theme(hope-indigo-600)]" />,
       summary:
-        "Communication and swallowing therapy to improve speech, language, and cognitive functions.",
-      image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80",
+        "Our certified speech-language pathologists assist with speech, language, and swallowing difficulties, enhancing communication and overall quality of life.",
+      image: "/services/speech-therapy.png",
     },
     {
       id: "home-health-aides",
       title: "Home Health Aides",
-      icon: <Heart className="h-8 w-8 text-hope-green-600" />,
+      icon: <Heart className="h-8 w-8 text-[theme([theme(hope-green-600)])]" />,
       summary:
-        "Compassionate personal care assistance with daily activities and companionship.",
-      image:
-        "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=600&q=80",
+        "Our trained and compassionate caregivers provide assistance with personal care, hygiene, medication reminders, and light household chores.",
+      image: "/services/home-aids.png",
     },
     {
       id: "medical-social-work",
       title: "Medical Social Work",
-      icon: <UserCheck className="h-8 w-8 text-hope-indigo-600" />,
+      icon: <UserCheck className="h-8 w-8 text-[theme(hope-indigo-600)]" />,
       summary:
-        "Support services to help navigate healthcare systems and community resources.",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=600&q=80",
+        "Our compassionate social workers offer counseling, resource coordination, and emotional support to patients and their families, ensuring holistic well-being.",
+      image: "/services/social-work.png",
     },
     {
       id: "medical-equipment",
       title: "Medical Equipment Support",
-      icon: <Brain className="h-8 w-8 text-hope-green-600" />,
+      icon: <Brain className="h-8 w-8 text-[theme([theme(hope-green-600)])]" />,
       summary:
-        "Provision and training on medical equipment needed for safe home care.",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80",
+        "Our priority is to provide assistance and to arrange for the rental or purchase of medical equipment such as walkers, wheelchairs, special beds, and any other devices needed.",
+      image: "/services/equipment-support.png",
     },
   ];
 
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-hope-green-50 to-hope-indigo-50 py-20">
+      <section className="bg-gradient-to-br from-[theme([theme(hope-green-50)])] to-[theme(hope-indigo-50)] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -103,9 +98,9 @@ const Services = () => {
             {services.map((service) => (
               <Card
                 key={service.id}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
+                className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden py-0`}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -120,13 +115,13 @@ const Services = () => {
                       {service.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed min-h-[104px]">
                     {service.summary}
                   </p>
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full border-hope-green-600 text-hope-green-600 hover:bg-hope-green-50"
+                    className="w-full border-[theme([theme(hope-green-600)])] text-[theme([theme(hope-green-600)])] hover:bg-[theme([theme(hope-green-50)])]"
                   >
                     <Link href={`/services/${service.id}`}>Learn More</Link>
                   </Button>
@@ -138,7 +133,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-hope-green-50 to-hope-indigo-50">
+      <section className="py-20 bg-gradient-to-br from-[theme([theme(hope-green-50)])] to-[theme(hope-indigo-50)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Need Help Choosing the Right Service?
@@ -150,7 +145,7 @@ const Services = () => {
           <Button
             asChild
             size="lg"
-            className="bg-hope-indigo-600 hover:bg-hope-indigo-700"
+            className="bg-[theme(hope-indigo-600)] hover:bg-[theme(hope-indigo-700)] text-white"
           >
             <Link href="/contact">Schedule a Consultation</Link>
           </Button>

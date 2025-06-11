@@ -36,10 +36,10 @@ export default function Home() {
   ];
   return (
     <>
-      <section className="relative bg-gradient-to-br from-[theme(hope-green-50)] via-white to-hope-indigo-50 py-20 lg:py-32">
+      <section className="relative bg-gradient-to-br from-[theme(hope-green-50)] via-white to-hope-indigo-50 py-20 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+            <div className="animate-in">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Restoring Health <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-indigo-600">
@@ -72,7 +72,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative z-10 bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <img
-                  src="/hero-image-2.png"
+                  src="/hero-image.png"
                   alt="Caring hands providing support"
                   className="w-full h-96 object-cover"
                 />
