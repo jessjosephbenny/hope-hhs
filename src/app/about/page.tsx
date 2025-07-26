@@ -76,25 +76,20 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Our Mission
+                Our Mission & Vision
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                At Hope Home Health Services, our mission is to deliver
-                high-quality, personalized healthcare in the comfort and dignity
-                of each patient’s home. We believe healing is most effective
-                when surrounded by familiarity, warmth, and family.
+                At Hope Home Health Service, our mission is to deliver
+                compassionate, personalized home healthcare that upholds each
+                individual&apos;s dignity and fosters independence. We are
+                committed to enhancing the well-being of those we serve through
+                reliable, high-quality care tailored to their unique needs.
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Our team is committed to promoting independence, restoring
-                well-being, and supporting every stage of recovery with clinical
-                excellence and heartfelt compassion. From skilled nursing to
-                rehabilitative therapies, every service is shaped around the
-                unique needs of those we serve.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                With every visit, we strive not only to treat conditions—but to
-                uplift spirits, ease burdens, and bring hope into the everyday
-                lives of our patients.
+                We envision becoming the most trusted and preferred provider of
+                home health services in our community—known for our unwavering
+                dedication, professional excellence, and heartfelt support that
+                empowers every client to live safely and confidently at home.
               </p>
             </div>
             <div className="relative">

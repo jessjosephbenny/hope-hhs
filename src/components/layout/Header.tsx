@@ -14,8 +14,8 @@ const Header = () => {
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Testimonials", path: "/testimonials" },
-    { label: "Contact", path: "/contact" },
     { label: "Career", path: "/career" },
+    { label: "Contact", path: "/contact" },
   ];
 
   const serviceItems = [

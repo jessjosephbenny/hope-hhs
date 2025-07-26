@@ -6,8 +6,26 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Heart, Users, Award, Upload } from "lucide-react";
+import { Heart, Users, Award } from "lucide-react";
 import FileUpload from "@/components/client-components/FileUpload";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const openRoles = [
+  "Registered Nurse",
+  "Physical Therapist",
+  "Occupational Therapist",
+  "Speech Therapist",
+  "Medical Social Worker",
+  "Home Health Aide",
+];
 
 const Career = () => {
   const [formData, setFormData] = useState({
@@ -24,20 +42,24 @@ const Career = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    console.log("Form Data", formData);
     // Create FormData for file upload
     const submitData = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
       if (value !== null) {
+        console.log("Key:", key, "Value:", value);
         submitData.append(key, value);
       }
     });
-
+    console.log(submitData);
     try {
       // Replace with your actual backend endpoint
-      const response = await fetch("/api/career-applications", {
+      const response = await fetch("https://getform.io/f/apjpqdda", {
         method: "POST",
         body: submitData,
+        headers: {
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
@@ -56,7 +78,9 @@ const Career = () => {
       } else {
         throw new Error("Failed to submit application");
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log("Error submitting form", error);
+    }
   };
 
   const handleChange = (
@@ -86,8 +110,8 @@ const Career = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Be part of a compassionate team dedicated to providing exceptional
-              home healthcare services. Make a difference in patients' lives
-              while building a rewarding career.
+              home healthcare services. Make a difference in patients&apos;
+              lives while building a rewarding career.
             </p>
           </div>
         </div>
@@ -115,7 +139,7 @@ const Career = () => {
                   Meaningful Work
                 </h3>
                 <p className="text-gray-600">
-                  Make a real difference in patients' lives by providing
+                  Make a real difference in patients&apos; lives by providing
                   compassionate care in the comfort of their homes.
                 </p>
               </CardContent>
@@ -233,16 +257,21 @@ const Career = () => {
                 {/* Position Interest */}
                 <div>
                   <Label htmlFor="position">Position of Interest *</Label>
-                  <Input
-                    id="position"
-                    name="position"
-                    type="text"
-                    value={formData.position}
-                    onChange={handleChange}
-                    required
-                    className="mt-1"
-                    placeholder="e.g., Registered Nurse, Physical Therapist, Home Health Aide"
-                  />
+                  <Select>
+                    <SelectTrigger className="mt-1 w-full">
+                      <SelectValue placeholder="e.g., Registered Nurse, Physical Therapist, Home Health Aide" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white">
+                      <SelectGroup>
+                        <SelectLabel>Open Roles</SelectLabel>
+                        {openRoles.map((role, index) => (
+                          <SelectItem key={index} value={role}>
+                            {role}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 {/* Experience Level */}
@@ -315,14 +344,16 @@ const Career = () => {
 
                 {/* Cover Letter */}
                 <div>
-                  <Label htmlFor="coverLetter">Cover Letter</Label>
+                  <Label htmlFor="coverLetter">
+                    Why You’re Interested in This Role
+                  </Label>
                   <Textarea
                     id="coverLetter"
                     name="coverLetter"
                     value={formData.coverLetter}
                     onChange={handleChange}
-                    rows={6}
-                    className="mt-1"
+                    rows={24}
+                    className="mt-1 h-24"
                     placeholder="Tell us why you're interested in working with Hope Home Health and what you can bring to our team..."
                   />
                 </div>
@@ -330,16 +361,16 @@ const Career = () => {
                 <Button
                   type="submit"
                   className="w-full bg-[theme(hope-green-600)] hover:bg-[theme(hope-green-700)] text-lg py-3"
-                  disabled={
-                    !formData.firstName ||
-                    !formData.lastName ||
-                    !formData.email ||
-                    !formData.phone ||
-                    !formData.position ||
-                    !formData.experience ||
-                    !formData.availability ||
-                    !formData.resume
-                  }
+                  // disabled={
+                  //   !formData.firstName ||
+                  //   !formData.lastName ||
+                  //   !formData.email ||
+                  //   !formData.phone ||
+                  //   !formData.position ||
+                  //   !formData.experience ||
+                  //   !formData.availability ||
+                  //   !formData.resume
+                  // }
                 >
                   Submit Application
                 </Button>

@@ -14,9 +14,33 @@ export const ContactForm = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    const submitData = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value !== null) {
+        submitData.append(key, value);
+      }
+    });
+    try {
+      // Replace with your actual backend endpoint
+      const response = await fetch("https://formspree.io/f/mzzvrwqv", {
+        method: "POST",
+        body: submitData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        // Reset form
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        throw new Error("Failed to submit application");
+      }
+    } catch (error) {
+      console.log("Failed to submit application", error);
+    }
   };
 
   const handleChange = (
