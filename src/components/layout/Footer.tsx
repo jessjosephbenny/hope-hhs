@@ -17,27 +17,13 @@ const Footer = () => {
                   height={50}
                 />
               </Link>
-              <img
-                src="/idph.png"
-                alt="logo"
-                width={150}
-                height={41}
-                className="object-contain"
-              />
-              <img
-                src="/medicare.png"
-                alt="logo"
-                width={70}
-                height={50}
-                className="object-contain"
-              />
+              <p className="text-gray-600 mb-4 max-w-md">
+                Restoring Health. Rekindling Hope. Providing compassionate,
+                professional home healthcare services in Arlington Heights and
+                surrounding communities.
+              </p>
             </div>
 
-            <p className="text-gray-600 mb-4 max-w-md">
-              Restoring Health. Rekindling Hope. Providing compassionate,
-              professional home healthcare services in Arlington Heights and
-              surrounding communities.
-            </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-hope-green-600" />
@@ -53,7 +39,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
@@ -89,7 +75,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Services */}
           <div>
@@ -127,14 +113,38 @@ const Footer = () => {
                   Speech Therapy
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services/medical-social-work"
+                  className="text-sm text-gray-600 hover:text-hope-green-600 transition-colors"
+                >
+                  Medical Social Work
+                </Link>
+              </li>
             </ul>
+          </div>
+          <div className="flex flex-row space-x-4 mb-4 items-center">
+            <img
+              src="/idph.png"
+              alt="logo"
+              width={150}
+              height={41}
+              className="object-contain"
+            />
+            <img
+              src="/medicare.png"
+              alt="logo"
+              width={70}
+              height={50}
+              className="object-contain"
+            />
           </div>
         </div>
 
         <div className="border-t border-gray-200 mt-8 pt-8 text-center">
           <p className="text-sm text-gray-500">
-            © 2024 Hope Home Health Services. All rights reserved. Licensed Home
-            Healthcare Provider.
+            © 2024 Hope Home Health Services Inc. All rights reserved. Licensed
+            Home Healthcare Provider.
           </p>
         </div>
       </div>

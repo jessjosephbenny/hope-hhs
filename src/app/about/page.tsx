@@ -87,7 +87,7 @@ const About = () => {
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 We envision becoming the most trusted and preferred provider of
-                home health services in our community—known for our unwavering
+                home health services in our community known for our unwavering
                 dedication, professional excellence, and heartfelt support that
                 empowers every client to live safely and confidently at home.
               </p>

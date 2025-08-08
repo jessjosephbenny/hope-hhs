@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { FacebookIcon } from "../ui/icons/facebook";
+import { LinkedInIcon } from "../ui/icons/instagram";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -110,7 +112,21 @@ const Header = () => {
           </nav>
 
           {/* Phone + CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2">
+            <div className="md:flex items-center space-x-2">
+              <Link
+                className="bg-zinc-200 rounded p-1"
+                href="https://www.facebook.com/profile.php?id=61576078887476&mibextid=wwXIfr&mibextid=wwXIfr"
+              >
+                <FacebookIcon className="h-8" />
+              </Link>
+              <Link
+                className="bg-zinc-200 rounded p-1"
+                href="https://www.linkedin.com/company/hope-home-health-services-inc./"
+              >
+                <LinkedInIcon className="h-8" />
+              </Link>
+            </div>
             <a
               href="tel:(847) 394-5500"
               className="flex items-center space-x-2 bg-[theme(hope-green.50)] text-[theme(hope-green.700)] px-4 py-2 rounded-lg hover:bg-[theme(hope-green.100)] transition-colors border border-[theme(hope-green.200)]"
@@ -143,14 +159,29 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a
-                href="tel:(847) 394-5500"
-                className="flex items-center space-x-2 bg-[theme(hope-green-50)] text-[theme(hope-green-700)] px-3 py-3 rounded-lg hover:bg-[theme(hope-green-100)] transition-colors border border-[theme(hope-green-200)] mb-3"
-              >
-                <Phone className="h-4 w-4" />
-                <span className="font-medium">(847) 394-5500</span>
-              </a>
-
+              <div className="flex items-center justify-between">
+                <a
+                  href="tel:(847) 394-5500"
+                  className="flex items-center space-x-2 bg-[theme(hope-green-50)] text-[theme(hope-green-700)] px-3 py-3 rounded-lg hover:bg-[theme(hope-green-100)] transition-colors border border-[theme(hope-green-200)] mb-3"
+                >
+                  <Phone className="h-4 w-4" />
+                  <span className="font-medium">(847) 394-5500</span>
+                </a>
+                <div className="md:hidden flex justify-center items-center space-x-2">
+                  <Link
+                    className="bg-zinc-200 rounded p-1"
+                    href="https://www.facebook.com/profile.php?id=61576078887476&mibextid=wwXIfr&mibextid=wwXIfr"
+                  >
+                    <FacebookIcon className="h-8" />
+                  </Link>
+                  <Link
+                    className="bg-zinc-200 rounded p-1"
+                    href="https://www.linkedin.com/company/hope-home-health-services-inc./"
+                  >
+                    <LinkedInIcon className="h-8" />
+                  </Link>
+                </div>
+              </div>
               {navItems.map((item) => (
                 <Link
                   key={item.path}

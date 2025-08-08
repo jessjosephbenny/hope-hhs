@@ -1,3 +1,4 @@
+import ServiceAreaMap from "@/components/client-components/ServiceAreaMapWrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -94,7 +95,7 @@ export default function Home() {
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Professional care, delivered with warmth and respect. We help
-                patients heal, regain independence, and find hope—without
+                patients heal, regain independence, and find hope without
                 leaving home.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -135,7 +136,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              What is Home Health Care Service?
+              What is Home Health?
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Home health care brings professional medical services directly to
@@ -150,7 +151,7 @@ export default function Home() {
                 <Stethoscope className="h-8 w-8 text-[theme(hope-green-600)]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Your Physician Prescribes Home Care
+                Your Physician Prescribes Home Health Services
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 Your doctor determines that home health services would benefit
@@ -321,12 +322,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Counties We Serve */}
+      <section className="pt-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Counties We Serve
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Bringing quality home healthcare to communities across the Chicago
+              area including Cook, DuPage, Kane, Will, Lake, Kendall, and
+              McHenry counties.
+            </p>
+          </div>
+          <ServiceAreaMap />
+        </div>
+      </section>
+
       {/* Contact CTA */}
-      <section className="py-20 bg-white">
+      <section className="pt-10 pb-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          {/* <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Ready to Get Started?
-          </h2>
+          </h2> */}
           <p className="text-xl text-gray-600 mb-8">
             Contact us today to learn how we can help you or your loved one
             receive quality healthcare at home.

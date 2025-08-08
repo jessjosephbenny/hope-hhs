@@ -60,7 +60,7 @@ const MedicalEquipment = () => {
             </div>
             <div className="relative">
               <img
-                src="/services/medical-equpment-2.png"
+                src="/services/home-services.png"
                 alt="Medical equipment setup"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
