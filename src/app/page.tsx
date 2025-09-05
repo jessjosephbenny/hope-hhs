@@ -83,7 +83,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative bg-gradient-to-br from-[theme(hope-green-50)] via-white to-hope-indigo-50 py-20 lg:py-16">
+      <section className="relative bg-gradient-to-br from-[theme(hope-green-50)] via-white to-hope-indigo-50 py-8 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-in">
@@ -132,7 +132,7 @@ export default function Home() {
         </div>
       </section>
       {/* What is Home Health Care */}
-      <section className="py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)]">
+      <section className="py-8 xl:py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -196,7 +196,7 @@ export default function Home() {
         </div>
       </section>
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-8 xl:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -231,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)]">
+      <section className="py-8 lg:py-20 bg-gradient-to-br from-[theme(hope-green-50)] to-[theme(hope-indigo-50)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -270,7 +270,7 @@ export default function Home() {
       </section>
 
       {/* Insurance Providers */}
-      <section className="py-20 bg-hope-green-50">
+      <section className="py-8 lg:py-20 bg-hope-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">

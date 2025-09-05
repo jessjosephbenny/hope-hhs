@@ -66,7 +66,8 @@ const ServiceAreaMap = () => {
           </div>
         `
         )
-        .on("mouseover", function (e) {
+        .on("mouseover", function () {
+          // @ts-expect-error third party method
           this.openPopup();
         });
     });

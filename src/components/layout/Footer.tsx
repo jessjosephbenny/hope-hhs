@@ -1,5 +1,7 @@
 import { Phone, MapPin } from "lucide-react";
 import Link from "next/link";
+import { FacebookIcon } from "../ui/icons/facebook";
+import { LinkedInIcon } from "../ui/icons/instagram";
 
 const Footer = () => {
   return (
@@ -8,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex flex-row space-x-4 mb-4 items-center">
+            <div className="flex flex-col lg:flex-row space-x-4 mb-4 items-start lg:items-center">
               <Link href="/" className="flex items-center space-x-2 mb-4">
                 <img
                   src="/HOPE_Logo_Color.png"
@@ -78,7 +80,7 @@ const Footer = () => {
           </div> */}
 
           {/* Services */}
-          <div>
+          {/* <div>
             <h3 className="font-semibold text-gray-900 mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
@@ -122,6 +124,22 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+          </div> */}
+          <div className="div flex justify-start items-center">
+            <div className="xl:hidden flex items-center space-x-2">
+              <Link
+                className="bg-zinc-200 rounded p-1"
+                href="https://www.facebook.com/profile.php?id=61576078887476&mibextid=wwXIfr&mibextid=wwXIfr"
+              >
+                <FacebookIcon className="h-8" />
+              </Link>
+              <Link
+                className="bg-zinc-200 rounded p-1"
+                href="https://www.linkedin.com/company/hope-home-health-services-inc./"
+              >
+                <LinkedInIcon className="h-8" />
+              </Link>
+            </div>
           </div>
           <div className="flex flex-row space-x-4 mb-4 items-center">
             <img

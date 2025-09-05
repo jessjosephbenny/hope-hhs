@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { FacebookIcon } from "../ui/icons/facebook";
 import { LinkedInIcon } from "../ui/icons/instagram";
+import { useIsPhone } from "@/hooks/useIsPhone";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,23 +34,39 @@ const Header = () => {
 
   const isActive = (path: string) => pathname === path;
   const isServicesActive = () => pathname?.startsWith("/services");
-
+  const isPhone = useIsPhone();
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
+      {/* Trust Banner */}
+      <div className="bg-gradient-to-r from-[theme(hope-green.500)] to-[theme(hope-indigo.500)] text-white py-2 text-center">
+        <p className="text-sm font-semibold">
+          Illinois' Most Trusted Home Health – 20 Years of Excellence
+        </p>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-40">
+        <div className="flex justify-start items-center h-12 lg:hidden">
+          <a
+            href="tel:(630) 260-2550"
+            className="flex items-center space-x-2 bg-[theme(hope-green.50)] text-[theme(hope-green.700)] px-4 py-2 rounded-lg hover:bg-[theme(hope-green.100)] transition-colors border border-[theme(hope-green.200)]"
+          >
+            <Phone className="h-4 w-4" />
+            <span className="text-sm font-medium">(630) 260-2550</span>
+          </a>
+        </div>
+        <div className="flex justify-between items-center h-24 md:h-40 px-4">
+          <div className="lg:hidden" />
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <img
-              src="/HOPE_Logo_Color.png"
+              src="/hope_new_logo.png"
               alt="logo"
-              width={180}
-              height={60}
+              width={isPhone ? 90 : 150}
+              height={isPhone ? 30 : 75}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden xl:flex space-x-8">
             {navItems.slice(0, 2).map((item) => (
               <Link
                 key={item.path}
@@ -112,7 +129,7 @@ const Header = () => {
           </nav>
 
           {/* Phone + CTA */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden xl:flex items-center space-x-2">
             <div className="md:flex items-center space-x-2">
               <Link
                 className="bg-zinc-200 rounded p-1"
@@ -128,7 +145,7 @@ const Header = () => {
               </Link>
             </div>
             <a
-              href="tel:(847) 394-5500"
+              href="tel:(630) 260-2550"
               className="flex items-center space-x-2 bg-[theme(hope-green.50)] text-[theme(hope-green.700)] px-4 py-2 rounded-lg hover:bg-[theme(hope-green.100)] transition-colors border border-[theme(hope-green.200)]"
             >
               <Phone className="h-8 w-8" />
@@ -144,86 +161,110 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className="xl:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-10 w-10" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="xl:hidden fixed inset-0 z-50 overflow-y-auto bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <div className="flex items-center justify-between">
-                <a
-                  href="tel:(847) 394-5500"
-                  className="flex items-center space-x-2 bg-[theme(hope-green-50)] text-[theme(hope-green-700)] px-3 py-3 rounded-lg hover:bg-[theme(hope-green-100)] transition-colors border border-[theme(hope-green-200)] mb-3"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span className="font-medium">(847) 394-5500</span>
-                </a>
-                <div className="md:hidden flex justify-center items-center space-x-2">
-                  <Link
-                    className="bg-zinc-200 rounded p-1"
-                    href="https://www.facebook.com/profile.php?id=61576078887476&mibextid=wwXIfr&mibextid=wwXIfr"
-                  >
-                    <FacebookIcon className="h-8" />
-                  </Link>
-                  <Link
-                    className="bg-zinc-200 rounded p-1"
-                    href="https://www.linkedin.com/company/hope-home-health-services-inc./"
-                  >
-                    <LinkedInIcon className="h-8" />
-                  </Link>
-                </div>
-              </div>
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-[theme(hope-green-600)] ${
-                    isActive(item.path)
-                      ? "text-[theme(hope-green-600)]"
-                      : "text-gray-700"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
+              <div className="flex items-center justify-between mx-4 h-24 pt-4 md:pt-12 mb-4">
+                <div />
+                {/* Logo */}
+                <Link href="/" className="flex items-center space-x-2">
+                  <img
+                    src="/hope_new_logo.png"
+                    alt="logo"
+                    width={isPhone ? 90 : 180}
+                    height={isPhone ? 30 : 60}
+                  />
                 </Link>
-              ))}
-
-              <div className="px-3 py-2">
-                <div className="text-base font-medium text-gray-900 mb-2">
-                  Services
-                </div>
-                {serviceItems.map((service) => (
+                {/* Mobile menu button */}
+                <button
+                  className="xl:hidden"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                  {isMenuOpen ? (
+                    <X className="h-10 w-10" />
+                  ) : (
+                    <Menu className="h-6 w-6" />
+                  )}
+                </button>
+              </div>
+              <a
+                href="tel:(630) 260-2550"
+                className="flex items-center space-x-2 bg-[theme(hope-green-50)] text-[theme(hope-green-700)] px-3 py-3 rounded-lg hover:bg-[theme(hope-green-100)] transition-colors border border-[theme(hope-green-200)] mb-3"
+              >
+                <Phone className="h-4 w-4" />
+                <span className="font-medium">(630) 260-2550</span>
+              </a>
+              <div className="pt-0 md:pt-16 xl:pt-0">
+                {navItems.map((item) => (
                   <Link
-                    key={service.path}
-                    href={service.path}
-                    className={`block px-3 py-2 text-sm transition-colors hover:text-[theme(hope-green-600)] ${
-                      isActive(service.path)
+                    key={item.path}
+                    href={item.path}
+                    className={`block px-3 py-2 text-base font-medium transition-colors hover:text-[theme(hope-green-600)] ${
+                      isActive(item.path)
                         ? "text-[theme(hope-green-600)]"
-                        : "text-gray-600"
+                        : "text-gray-700"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {service.label}
+                    {item.label}
                   </Link>
                 ))}
-              </div>
 
-              <div className="px-3 py-2">
-                <Button
-                  asChild
-                  className="w-full  bg-hope-indigo-600 hover:bg-hope-indigo-700"
-                >
-                  <Link href="/contact">Get Started</Link>
-                </Button>
+                <div className="px-3 py-2">
+                  <div className="text-base font-medium text-gray-900 mb-2">
+                    Services
+                  </div>
+                  {serviceItems.map((service) => (
+                    <Link
+                      key={service.path}
+                      href={service.path}
+                      className={`block px-3 py-2 text-sm transition-colors hover:text-[theme(hope-green-600)] ${
+                        isActive(service.path)
+                          ? "text-[theme(hope-green-600)]"
+                          : "text-gray-600"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+                <div className="div flex justify-center mx-4 items-center">
+                  <div className="xl:hidden flex justify-end items-center space-x-2 mb-4">
+                    <Link
+                      className="bg-zinc-200 rounded p-1"
+                      href="https://www.facebook.com/profile.php?id=61576078887476&mibextid=wwXIfr&mibextid=wwXIfr"
+                    >
+                      <FacebookIcon className="h-8" />
+                    </Link>
+                    <Link
+                      className="bg-zinc-200 rounded p-1"
+                      href="https://www.linkedin.com/company/hope-home-health-services-inc./"
+                    >
+                      <LinkedInIcon className="h-8" />
+                    </Link>
+                  </div>
+                </div>
+                <div className="px-3 py-2">
+                  <Button
+                    asChild
+                    className="w-full  bg-hope-indigo-600 hover:bg-hope-indigo-700"
+                  >
+                    <Link href="/contact">Get Started</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
