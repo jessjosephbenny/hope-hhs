@@ -37,14 +37,8 @@ const Header = () => {
   const isPhone = useIsPhone();
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Trust Banner */}
-      <div className="bg-gradient-to-r from-[theme(hope-green.500)] to-[theme(hope-indigo.500)] text-white py-2 text-center">
-        <p className="text-sm font-semibold">
-          Illinois' Most Trusted Home Health – 20 Years of Excellence
-        </p>
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-start items-center h-12 lg:hidden">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="flex justify-end items-center h-12 lg:hidden pr-4">
           <a
             href="tel:(630) 260-2550"
             className="flex items-center space-x-2 bg-[theme(hope-green.50)] text-[theme(hope-green.700)] px-4 py-2 rounded-lg hover:bg-[theme(hope-green.100)] transition-colors border border-[theme(hope-green.200)]"
@@ -53,15 +47,14 @@ const Header = () => {
             <span className="text-sm font-medium">(630) 260-2550</span>
           </a>
         </div>
-        <div className="flex justify-between items-center h-24 md:h-40 px-4">
-          <div className="lg:hidden" />
+        <div className="flex justify-between items-center h-24 md:h-40 pr-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <img
               src="/hope_new_logo.png"
               alt="logo"
-              width={isPhone ? 90 : 150}
-              height={isPhone ? 30 : 75}
+              width={isPhone ? 240 : 270}
+              height={isPhone ? 90 : 180}
             />
           </Link>
 
@@ -183,7 +176,7 @@ const Header = () => {
                   <img
                     src="/hope_new_logo.png"
                     alt="logo"
-                    width={isPhone ? 90 : 180}
+                    width={isPhone ? 220 : 180}
                     height={isPhone ? 30 : 60}
                   />
                 </Link>

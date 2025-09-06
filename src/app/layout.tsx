@@ -31,6 +31,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
+        {/* Trust Banner */}
+        <div className="bg-gradient-to-r from-[theme(hope-green.500)] to-[theme(hope-indigo.500)] text-white py-2 text-center">
+          <p className="text-sm font-semibold">
+            Illinois&apos; Most Trusted Home Health – 20 Years of Excellence
+          </p>
+        </div>
         {children}
         <Footer />
       </body>

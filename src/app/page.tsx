@@ -12,6 +12,8 @@ import {
   ArrowRight,
   HomeIcon,
   Target,
+  Quote,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -78,6 +80,23 @@ export default function Home() {
       name: "Essence Healthcare",
       logo: "insurance/essence.webp",
       alt: "Essence Healthcare Insurance",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Don Sniezek",
+      location: "Arlington Heights",
+      service: "Skilled Nursing",
+      rating: 5,
+      text: "The nurse from hope was kind, professional, and knowledgeable during all our sessions. It was a pleasure having our weekly meetings.",
+    },
+    {
+      name: "Nancy Andretich",
+      location: "Schaumburg",
+      service: "Skilled Nursing, Physical Therapy",
+      rating: 5,
+      text: "Hope Home Health is an excellent service. Great nurses and PT services — highly recommend!",
     },
   ];
 
@@ -322,8 +341,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Preview Section */}
+      <section className="py-20 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              What Our Families Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don&apos;t just take our word for it. Hear from the families
+              we&apos;ve served.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {testimonials.map((t, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-lg bg-white hover:shadow-xl transition-shadow duration-300"
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Quote className="h-8 w-8 text-hope-green-600 mr-3" />
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-yellow-400 fill-current"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <blockquote className="text-gray-700 mb-6 leading-relaxed italic">
+                    {t.text}
+                  </blockquote>
+                  <div className="border-t pt-4">
+                    <div className="font-semibold text-gray-900">{t.name}</div>
+                    <div className="text-sm text-gray-500">{t.location}</div>
+                    <div className="text-sm text-hope-indigo-600 font-medium mt-1">
+                      {t.service}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center">
+            <Link href="/testimonials">
+              <Button
+                size="lg"
+                className="bg-hope-green-600 hover:bg-hope-green-700 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Read More Testimonials
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Counties We Serve */}
-      <section className="pt-20 bg-white">
+      <section className="pt-20 bg-hope-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -340,7 +420,7 @@ export default function Home() {
       </section>
 
       {/* Contact CTA */}
-      <section className="pt-10 pb-20 bg-white">
+      <section className="pt-10 pb-20 bg-hope-green-50 ">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Ready to Get Started?
